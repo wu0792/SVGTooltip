@@ -1,0 +1,139 @@
+html {
+    font-size: 62.5%;
+    color: blue;    
+}
+
+::selection {
+    background-color: #b3d4fc;
+    text-shadow: none;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+h1{
+    color: blue;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 1rem;
+}
+
+@tooltip1Left: 50px;
+@tooltip2Left: 120px;
+
+.sound-article{
+    float: left;
+    width: 400px;
+    &:nth-of-type(1){
+        text-align: center;
+        & svg{
+            margin-left: @tooltip1Left - 140px;
+        }
+        & p{
+            display: block;
+            margin-top: -80px;
+            color: red;
+            font-size: 14px;
+            width: 110px;
+            margin-left: @tooltip1Left + 10px;
+            opacity: 0;
+            transition:opacity .2s .5s;
+        }
+        & .sound-content{
+            margin-top: -220px;
+            margin-left: @tooltip1Left - 240px;
+        }
+    }
+    &:nth-of-type(2){
+        text-align: center;
+        & svg{
+            margin-left: @tooltip2Left - 120px;
+        }
+        & p{
+            display: block;
+            margin-top: -80px;
+            color: red;
+            font-size: 14px;
+            width: 150px;
+            margin-left: @tooltip2Left;
+            opacity: 0;
+            transition:opacity .2s .5s;
+        }
+        & .sound-content{
+            margin-top: -220px;
+        }
+    }
+    a{
+        display: block;
+        text-align: center;
+        margin-top: 120px;
+        text-decoration: none;
+    }
+}
+
+svg{
+    fill: transparent;
+    stroke: orange;
+    stroke-width: 6px;
+    opacity: 0;
+    transform-origin: center;
+    transition-duration: .5s;
+    transition-delay: .2s;
+    transform: translate(0, -10px);
+}
+
+.avator{
+    display: inline-block;
+
+    a{
+        text-decoration: none;
+        color: #000;
+        font-size: 1.5rem;
+        padding-top: 1rem;
+        display: inline-block;
+        line-height: 3rem;        
+    }
+
+    img{
+        border-radius: 100%;
+        display: block;
+    }
+
+    span{
+        display: block;
+        text-align: center;
+    }
+}
+
+@avatorMarginTop: 50px;
+.avator-1{
+    margin-top: @avatorMarginTop;
+    margin-left: @tooltip1Left + 190px;
+    &:hover svg{
+        opacity: 1;
+        transform: translate(0, 0px);
+    }
+    &:hover p{
+        opacity: 1;
+    }
+}
+
+.avator-2{
+    margin-top: @avatorMarginTop;
+    margin-left: @tooltip2Left - 80px;
+    &:hover svg{
+        opacity: 1;
+        transform: translate(0, 0px);
+    }
+    &:hover p{
+        opacity: 1;
+    }
+}
